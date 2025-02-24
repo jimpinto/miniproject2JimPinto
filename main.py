@@ -18,3 +18,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+# Creating the charts folder if it isn't there
+if not os.path.exists("charts"):
+    os.makedirs("charts")
+
+# Loading the dataset im using
+df = pd.read_csv("fcc_broadband.csv")
