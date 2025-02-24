@@ -30,3 +30,33 @@ print("Dataset Preview:")
 print(df.head())
 print("\nColumns in the dataset:")
 print(df.columns)
+
+
+# this is chart 1 for a download speed column
+plt.figure(figsize=(10, 6))
+plt.hist(df['d_1'], bins=20, color='skyblue', edgecolor='black', alpha=0.7)
+plt.title("Distribution of d_1 (Download Speed)")
+plt.xlabel("Download Speed (Mbps)")
+plt.ylabel("Frequency")
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+
+# Save the histogram in the charts folder i made
+plt.savefig("charts/d1_histogram.png")
+plt.show()
+
+# Chart 2: Boxplot to compare a bumch of speeds
+d_columns = [f'd_{i}' for i in range(1, 9)]  # List: ['d_1', 'd_2', ..., 'd_8']
+
+plt.figure(figsize=(12, 8))
+# Create a boxplot for each of my columns
+plt.boxplot([df[col] for col in d_columns], tick_labels=d_columns, patch_artist=True)
+plt.title("Boxplot Comparison of d_1 to d_8 (Download Speeds)")
+plt.xlabel("Column")
+plt.ylabel("Download Speed (Mbps)")
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+
+# Save the boxplot as a PNG file in the 'charts' folder
+plt.savefig("charts/d_columns_boxplot.png")
+plt.show()
