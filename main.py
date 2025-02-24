@@ -24,3 +24,9 @@ if not os.path.exists("charts"):
 
 # Loading the dataset im using
 df = pd.read_csv("fcc_broadband.csv")
+
+# Displaying a preview of my dataframe i entered and its columns
+print("Dataset Preview:")
+print(df.head())
+print("\nColumns in the dataset:")
+print(df.columns)
