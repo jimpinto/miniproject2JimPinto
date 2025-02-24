@@ -13,3 +13,8 @@ or the use of unauthorized materials. I have neither provided nor
  I acknowledge my commitment to upholding the principles of academic
  integrity.
 '''
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
